@@ -1,0 +1,138 @@
+@import "tailwindcss";
+/* Load your custom fonts using @font-face */
+@font-face {
+  font-family: 'Avelia';
+  src: url(/fonts/avelia.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Background pattern */
+.bg-pattern {
+  background-image: url('/pattern-bg.svg');
+  background-size: cover;
+  background-position: center;
+}
+@font-face {
+  font-family: 'Audrey Mirages DEMO';
+  src: url('/fonts/Audrey Mirages DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FunnelDisplay';
+  src: url('/fonts/FunnelDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Funnel Display',Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+/* Define CSS classes for each font */
+.font-avelia {
+  font-family: 'Avelia', sans-serif;
+}
+
+.font-amd {
+  font-family: 'Audrey Mirages DEMO', serif;
+}
+
+.font-funnel-display {
+  font-family: 'Funnel Display', sans-serif;
+}
+/* Weight variations for Funnel Display */
+.font-funnel-display-thin { font-weight: 100 !important; }
+.font-funnel-display-extralight { font-weight: 200 !important; }
+.font-funnel-display-light { font-weight: 300 !important; }
+.font-funnel-display-regular { font-weight: 400 !important; }
+.font-funnel-display-medium { font-weight: 500 !important; }
+.font-funnel-display-semibold { font-weight: 600 !important; }
+.font-funnel-display-bold { font-weight: 700 !important; }
+.font-funnel-display-extrabold { font-weight: 800 !important; }
+.font-funnel-display-black { font-weight: 900 !important; }
+/* Custom text colors */
+.text-moods-gold {
+  @apply text-[#D4A76A];
+}
+
+.text-moods-green {
+  @apply text-[#2E4A35];
+}
+.bg-moods-green{
+  @apply bg-[#2E4A35]
+}
+/* Review Card Height */
+.review-card {
+  height: 180px !important; /* 32 * 4 = 128px */
+}
+
+@media (min-width: 768px) {
+  .review-card {
+    height: 160px !important; /* 40 * 4 = 160px */
+  }
+}
