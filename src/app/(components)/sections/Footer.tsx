@@ -1,17 +1,18 @@
 export default function Footer() {
     return (
-        <footer className="bg-moods-green text-white pt-12 pb-6"
+        <footer className="bg-moods-green text-white mt-[100px] "
                 style={{
                     backgroundImage: 'url("/footer-bg.svg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-            <div className="container mx-auto px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="container mx-auto p-12  pb-6 px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 <div>
-                    <img src="/logo-wt.svg" alt="Moods Logo" className="h-10 mb-4" />
+                    <img src="/logo-wt.svg" alt="Moods Logo" className="h-10 mb-4"/>
                     <p className="text-sm opacity-80">
-                        Traditional foods carry cultural identity, history, and customs, acting as a link to heritage passed down through generations.
+                        Traditional foods carry cultural identity, history, and customs, acting as a link to heritage
+                        passed down through generations.
                     </p>
                 </div>
 
@@ -38,13 +39,13 @@ export default function Footer() {
                     <h3 className="font-bold mb-4">Service Client</h3>
                     <div className="space-y-2 text-sm opacity-80">
                         <div>
-                            <strong>Casablanca</strong><br />
-                            (+212) 522-862135<br />
+                            <strong>Casablanca</strong><br/>
+                            (+212) 522-862135<br/>
                             (+212) 674-755993
                         </div>
                         <div>
-                            <strong>Marrakech</strong><br />
-                            (+212) 524-304462<br />
+                            <strong>Marrakech</strong><br/>
+                            (+212) 524-304462<br/>
                             (+212) 774-004544
                         </div>
                     </div>
@@ -52,7 +53,7 @@ export default function Footer() {
 
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/20 text-center text-xs opacity-70">
+            <div className="container mx-auto px-6 py-4 xl:px-24 mt-8 pt-4 bg-[#252A25]  text-xs opacity-70">
                 MODS © 2025 - Tous droits réservés.
             </div>
         </footer>
