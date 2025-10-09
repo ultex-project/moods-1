@@ -72,7 +72,7 @@ export default function HeroCarousel() {
 
     return (
         <section className="relative h-[80vh] md:h-screen flex items-center overflow-hidden">
-            <div className="container mx-10 mx-auto">
+            <div className="container mx-10 mx-auto px-6 xl:px-24">
                 {/* Background pattern */}
                 <div className="absolute inset-0 opacity-10"></div>
 

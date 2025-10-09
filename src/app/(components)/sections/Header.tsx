@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 export default function Header() {
     return (
         <header className="border-b border-gray-200">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="container mx-auto px-6 xl:px-24 py-4 flex justify-between items-center">
                 <Link href="/" className="flex items-center space-x-2">
                     <img src="/logo.svg" alt="Moods Logo" className="h-8" />
 

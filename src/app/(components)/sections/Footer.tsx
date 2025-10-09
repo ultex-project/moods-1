@@ -6,7 +6,7 @@ export default function Footer() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="container mx-auto px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 <div>
                     <img src="/logo-wt.svg" alt="Moods Logo" className="h-10 mb-4" />
