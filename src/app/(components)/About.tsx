@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutSection() {
     return (
         <section className="py-16 px-4 md:px-8 lg:px-16">
             <div className="container px-20 mx-auto">
                 <div
-                    className="bg-[#2E4A35] rounded-3xl p-8 md:p-12 overflow-hidden relative"
+                    className="bg-[#2E4A35] rounded-3xl p-8 md:p-12 overflow-visible relative"
                     style={{
                         backgroundImage: 'url("/about-bg.png")',
                         backgroundSize: 'cover',
@@ -16,10 +17,8 @@ export default function AboutSection() {
                         backgroundRepeat: 'no-repeat',
                     }}
                 >
-                    {/*/!* Gradient overlay for depth *!/*/}
-                    {/*<div className="absolute inset-0 bg-gradient-to-r from-[#2E4A35] to-[#223A2B] opacity-90"></div>*/}
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
 
-                    <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
                         {/* Text Content */}
                         <div className="md:w-1/2 space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-white font-amd">
@@ -46,7 +45,24 @@ export default function AboutSection() {
                         </div>
 
                         {/* Product Image */}
-
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="md:w-1/2 flex justify-center relative"
+                            style={{
+                                marginBottom: '-80px', // 👈 makes image overflow out of section bottom
+                            }}
+                        >
+                            <Image
+                                src="/about-products.png" // 👈 replace with your image name
+                                alt="MODS product collection"
+                                width={950} // 👈 make it bigger
+                                height={650}
+                                className="object-contain drop-shadow-2xl scale-110 md:scale-125"
+                                priority
+                            />
+                        </motion.div>
                     </div>
                 </div>
             </div>

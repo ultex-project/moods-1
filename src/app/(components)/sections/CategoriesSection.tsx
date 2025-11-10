@@ -22,10 +22,10 @@ const categories = [
     },
     {
         id: 3,
-        title: "Olives",
-        image: "/categories/category-olives-1.png",
-        slug: "olives",
-        standColor:"#90957F"
+        title: "Dates",
+        image: "/categories/category-dates.png",
+        slug: "dates",
+        standColor:"#B18E83"
     },
     {
         id: 4,
