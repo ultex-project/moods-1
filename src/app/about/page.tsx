@@ -15,7 +15,7 @@ export default function AboutPage() {
                 {/* 🌿 Hero Section */}
                 <section className="relative px-4 md:px-8 lg:px-20 mt-10">
                     <div
-                        className="relative max-w-6xl mx-auto rounded-2xl md:rounded-[40px] overflow-hidden bg-[#2E4A35] text-white"
+                        className="relative max-w-7xl mx-auto rounded-2xl md:rounded-[40px] overflow-hidden bg-[#2E4A35] text-white"
                         style={{
                             backgroundImage: 'url("/about-bg.png")',
                             backgroundSize: 'cover',
@@ -28,10 +28,12 @@ export default function AboutPage() {
 
                             {/* Left Text + SVG */}
                             <div className="w-full lg:w-1/2 relative z-10 text-center lg:text-left">
-                                <div className="relative inline-block leading-[0.8]">
-                                    <h2 className="text-[2.75rem] md:text-[4.5rem] lg:text-[6rem] font-bold font-amd text-white mb-0 relative z-10 leading-tight">
-                                        <span className="block">Who</span>
-                                        <span className="block relative">
+                                {/* Left Text + SVG */}
+                                <div className="md:w-1/2 relative z-10">
+                                    <div className="relative inline-block leading-[0.8]">
+                                        <h2 className="text-[3rem] md:text-[5rem] font-bold font-amd text-white mb-0 relative z-10">
+                                            <span className="block">Who</span>
+                                            <span className="block relative">
                                           we
                                           <Image
                                               src="/About-sign.svg"
@@ -41,8 +43,9 @@ export default function AboutPage() {
                                               className="absolute top-[10px] left-[80px] opacity-80 pointer-events-none select-none"
                                           />
                                         </span>
-                                        <span className="block">are</span>
-                                    </h2>
+                                            <span className="block">are</span>
+                                        </h2>
+                                    </div>
                                 </div>
                             </div>
 
@@ -63,7 +66,7 @@ export default function AboutPage() {
                 {/* 🌿 White Container Section */}
                 <section className="relative -mt-20 px-4 md:px-8 lg:px-20">
                     <div
-                        className="bg-white rounded-2xl md:rounded-3xl shadow-lg/10 border border-gray-100 max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-14 text-center space-y-8">
+                        className="bg-white rounded-2xl md:rounded-3xl shadow-lg/10 border border-gray-100 max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-14 text-center space-y-8">
                         {/* 🧡 Welcome Section */}
                         <h2 className="text-4xl md:text-5xl font-amd text-[#D4A76A] mb-3 leading-tight">Mods</h2>
                         <h3 className="text-2xl md:text-3xl font-semibold text-[#2E4A35] mb-6 leading-tight">
@@ -151,7 +154,7 @@ export default function AboutPage() {
                     </div>
                 </section>
                 {/* 🌱 Our Purpose */}
-                <section className="px-4 md:px-8 lg:px-20 py-16 text-center max-w-6xl mx-auto space-y-8">
+                <section className="px-4 md:px-8 lg:px-20 py-16 text-center max-w-7xl mx-auto space-y-8">
                     <h2 className="text-3xl md:text-4xl font-semibold text-[#2E4A35] mb-4 leading-tight">
                         Our purpose
                     </h2>

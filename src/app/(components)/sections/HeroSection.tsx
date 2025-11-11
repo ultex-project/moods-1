@@ -77,7 +77,7 @@ export default function HeroCarousel() {
         <section className="relative overflow-hidden py-10 sm:py-14 md:py-16">
             <div className="absolute inset-0 opacity-10" />
 
-            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20">
+            <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-20">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}

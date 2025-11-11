@@ -25,7 +25,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         <div className="min-h-screen flex flex-col bg-white">
             <Header />
 
-            <main className="flex-grow w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 py-12">
+            <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-20 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <ProductGallery images={product.galleryImages} title={product.title} />
                     <ProductInfo product={product} />

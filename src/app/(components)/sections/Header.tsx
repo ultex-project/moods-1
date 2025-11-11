@@ -42,7 +42,7 @@ export default function Header() {
 
     return (
         <header className="border-b border-gray-200">
-            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between gap-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between gap-4">
                 <Link href="/" className="flex items-center space-x-2" aria-label="Go to homepage">
                     <Image
                         src="/logo.svg"
@@ -96,7 +96,7 @@ export default function Header() {
                         transition={{ duration: 0.2 }}
                         className="md:hidden border-t border-gray-200 bg-white"
                     >
-                        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col space-y-2">
+                        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col space-y-2">
                             {NAV_LINKS.map(({ href, label }) => (
                                 <Link
                                     key={href}

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function ProductHero() {
     return (
         <section className="relative bg-white py-12 md:py-20 overflow-hidden">
-            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 flex flex-col lg:flex-row items-center gap-10 relative z-10">
+            <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-20 flex flex-col lg:flex-row items-center gap-10 relative z-10">
                 {/* Left Text Content */}
                 <div className="w-full lg:w-1/2 space-y-6 relative text-center lg:text-left">
                     {/* Background "Natural" SVG */}

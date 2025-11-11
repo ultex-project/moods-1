@@ -13,7 +13,7 @@ export default function ContactPage() {
                 {/* 🏞️ Contact Hero Section */}
                 <section className="relative px-4 md:px-8 lg:px-20 mt-10">
                     <div
-                        className="relative max-w-6xl mx-auto rounded-[40px] overflow-visible bg-[#2E4A35] text-white"
+                        className="relative max-w-7xl mx-auto rounded-[40px] overflow-visible bg-[#2E4A35] text-white"
                         style={{
                             backgroundImage: 'url("/about-bg.png")',
                             backgroundSize: 'cover',
@@ -40,7 +40,7 @@ export default function ContactPage() {
                     </div>
                 </section>
                 {/* 📨 Contact Form */}
-                <section className="px-4 md:px-8 lg:px-20 py-20 w-full max-w-6xl mx-auto">
+                <section className="px-4 md:px-8 lg:px-20 py-20 w-full max-w-7xl mx-auto">
                     <h2 className="text-2xl md:text-3xl font-semibold text-[#2E4A35] mb-10 text-center tracking-wide leading-tight">
                         TELL US YOUR PROJECT
                     </h2>

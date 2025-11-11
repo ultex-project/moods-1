@@ -262,7 +262,7 @@ export default function CategoriesPage() {
             <Header />
 
             <main className="flex-grow py-12">
-                <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
+                <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
                     <FilterBar
                         itemsPerPage={itemsPerPage}
                         sortBy={sortBy}

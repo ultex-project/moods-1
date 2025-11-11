@@ -16,7 +16,7 @@ export default function Footer() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-12 flex flex-col items-center space-y-8 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:items-start md:gap-8">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-12 flex flex-col items-center space-y-8 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:items-start md:gap-8">
 
                 <div className="text-center md:text-left space-y-3">
                     <Image src="/logo-wt.svg" alt="Moods logo" width={140} height={40} className="mb-4 h-10 w-auto"/>
@@ -67,7 +67,7 @@ export default function Footer() {
 
             </div>
 
-            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-4 mt-8 pt-4 bg-[#252A25] text-xs opacity-70 text-center">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-4 mt-8 pt-4 bg-[#252A25] text-xs opacity-70 text-center">
                 MODS © 2025 - Tous droits réservés.
             </div>
         </footer>
