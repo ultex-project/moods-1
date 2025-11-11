@@ -1,4 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
+const FOOTER_LINKS = [
+    { label: 'Shop', href: '/products' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+];
 
 export default function Footer() {
     return (
@@ -19,14 +27,18 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center md:text-left">
-                    <h3 className="font-bold mb-4 text-lg md:text-xl">Accès Rapide</h3>
+                    <h3 className="font-bold mb-4 text-lg md:text-xl">Quick Links</h3>
                     <ul className="space-y-2 text-sm md:text-base opacity-80">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">À Propos</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Événements</a></li>
-                        <li><a href="#">Ressources</a></li>
-                        <li><a href="#">Contact</a></li>
+                        {FOOTER_LINKS.map((link) => (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    className="inline-flex items-center justify-center md:justify-start min-h-[44px] hover:opacity-80 transition"
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 

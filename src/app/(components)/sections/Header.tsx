@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -16,8 +17,28 @@ const NAV_LINKS = [
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const handleNavClick = () => setMenuOpen(false);
+
+    const isActive = (href: string) => {
+        if (href === '/') {
+            return pathname === '/';
+        }
+        return pathname.startsWith(href);
+    };
+
+    const desktopLinkClasses = (href: string) =>
+        [
+            'font-medium transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moods-green py-2',
+            isActive(href) ? 'text-[#D4A76A] font-semibold' : 'text-[#2E4A35]',
+        ].join(' ');
+
+    const mobileLinkClasses = (href: string) =>
+        [
+            'block w-full rounded-lg px-3 py-3 text-base font-medium transition hover:bg-moods-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moods-green',
+            isActive(href) ? 'text-[#D4A76A]' : 'text-[#2E4A35]',
+        ].join(' ');
 
     return (
         <header className="border-b border-gray-200">
@@ -38,7 +59,7 @@ export default function Header() {
                         <Link
                             key={href}
                             href={href}
-                            className="font-medium transition hover:text-moods-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moods-green py-2"
+                            className={desktopLinkClasses(href)}
                         >
                             {label}
                         </Link>
@@ -81,7 +102,7 @@ export default function Header() {
                                     key={href}
                                     href={href}
                                     onClick={handleNavClick}
-                                    className="block w-full rounded-lg px-3 py-3 text-base font-medium text-[#2E4A35] hover:bg-moods-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moods-green"
+                                    className={mobileLinkClasses(href)}
                                 >
                                     {label}
                                 </Link>

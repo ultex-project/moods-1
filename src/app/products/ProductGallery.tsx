@@ -1,49 +1,56 @@
 // app/(components)/products/ProductGallery.tsx
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import ProductCard from "@/app/(components)/cards/ProductCard";
 
-const productVariants = [
-    { title: 'Spice Mix',  description: '$21.00', image: '/products/product-1.svg', slug: 'spice-mix' },
-    { title: 'Date Flour', description: '$21.00', image: '/products/product-1.svg',  slug: 'date-flour' },
-    { title: 'Olive Jar',  description: '$21.00', image: '/products/product-1.svg',  slug: 'olive-jar'  },
-];
+interface ProductGalleryProps {
+    images: string[];
+    title: string;
+}
 
-export default function ProductGallery() {
-    const [selected, setSelected] = useState(productVariants[0]);
+export default function ProductGallery({ images, title }: ProductGalleryProps) {
+    const safeImages = images.length > 0 ? images : ['/products/product-1.png'];
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    useEffect(() => {
+        setSelectedIndex(0);
+    }, [images]);
+
+    const selectedImage = safeImages[selectedIndex] ?? safeImages[0];
 
     return (
         <div className="w-full">
-            {/* Main card (taller) */}
-            <div className="w-full max-w-md md:max-w-lg">
-                <ProductCard
-                    {...selected}
-                    hideText
-                    mode="galleryMain"  // ← key
+            <div className="relative aspect-square rounded-2xl bg-gray-50 border border-gray-200 overflow-hidden flex items-center justify-center">
+                <Image
+                    src={selectedImage}
+                    alt={`${title} image ${selectedIndex + 1}`}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 90vw"
+                    className="object-contain p-6"
+                    priority
                 />
             </div>
 
-            {/* Thumbnails */}
-            <div className="mt-4 flex gap-4">
-                {productVariants.map((v) => {
-                    const active = v.slug === selected.slug;
+            <div className="mt-4 flex flex-wrap gap-4">
+                {safeImages.map((image, index) => {
+                    const isActive = index === selectedIndex;
                     return (
                         <button
-                            key={v.slug}
-                            onClick={() => setSelected(v)}
+                            type="button"
+                            key={`${image}-${index}`}
+                            onClick={() => setSelectedIndex(index)}
                             className={[
-                                'relative w-20 h-20 rounded-lg overflow-hidden border transition-all bg-white',
-                                active
+                                'relative w-20 h-20 rounded-xl overflow-hidden border transition-all bg-white flex-shrink-0',
+                                isActive
                                     ? 'border-[#2E4A35] ring-2 ring-[#2E4A35]/20'
                                     : 'border-gray-300 hover:border-[#2E4A35]',
                             ].join(' ')}
-                            aria-label={`Select variant ${v.title}`}
+                            aria-label={`Select image ${index + 1}`}
                         >
                             <Image
-                                src={v.image}
-                                alt={v.title}
+                                src={image}
+                                alt={`${title} thumbnail ${index + 1}`}
                                 fill
                                 className="object-contain p-2"
                             />

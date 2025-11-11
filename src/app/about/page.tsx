@@ -103,7 +103,7 @@ export default function AboutPage() {
                         </div>
 
                         <Link
-                            href="/shop"
+                            href="/products"
                             className="inline-block mt-6 px-8 py-3 bg-[#D4A76A] text-white rounded-md font-medium text-sm md:text-base tracking-wide shadow-md hover:opacity-90 transition"
                         >
                             Shop now

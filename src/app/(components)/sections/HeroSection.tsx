@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -23,7 +24,7 @@ const heroSlides = [
         subtitle: "Crafted with care",
         description: "Every jar tells a story of tradition, family recipes, and the rich flavors of Morocco.",
         buttonText: "EXPLORE PRODUCTS",
-        buttonLink: "/categories",
+        buttonLink: "/products",
         image: "/hero-image.png", // ← Add your actual image path
         color: "text-moods-green"
     },
@@ -94,12 +95,12 @@ export default function HeroCarousel() {
                                 <p className="text-gray-600 mt-4 text-base md:text-lg leading-relaxed">
                                     {currentSlide.description}
                                 </p>
-                                <a
+                                <Link
                                     href={currentSlide.buttonLink}
                                     className="bg-[#2E4A35] text-white px-6 py-3 rounded-xl md:rounded-2xl font-medium text-sm md:text-base tracking-wide hover:opacity-90 transition-all duration-300 inline-block mt-6"
                                 >
                                     {currentSlide.buttonText}
-                                </a>
+                                </Link>
                             </div>
 
                             <div className="w-full lg:w-3/5 relative">
