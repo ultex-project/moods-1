@@ -59,11 +59,10 @@ const reviews: ReviewItem[] = [
 
 export default function ReviewsSection() {
     return (
-        <section className="py-16 px-4 md:px-8 lg:px-16">
-            <div className="container mx-auto">
-                {/* Header */}
-                <div className="mb-12 flex items-center justify-between">
-                    <div>
+        <section className="py-16">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                    <div className="text-center md:text-left">
                         <h2 className="text-3xl font-bold font-amd text-moods-green flex items-center">
               <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
                 <Image
@@ -75,13 +74,13 @@ export default function ReviewsSection() {
               </span>
                             Our Reviews
                         </h2>
-                        <p className="text-gray-600 mt-4">
+                        <p className="text-gray-600 mt-4 max-w-2xl">
                             Traditional Moroccan food store products include staples like argan oil, saffron, and
                             other spices
                         </p>
                     </div>
 
-                    <div className="flex space-x-2">
+                    <div className="flex justify-center md:justify-end space-x-3">
                         <button type="button" className="bg-moods-green text-white p-2 rounded-md hover:bg-opacity-90 transition" aria-label="Previous reviews">
                             <FaChevronLeft />
                         </button>
@@ -91,8 +90,7 @@ export default function ReviewsSection() {
                     </div>
                 </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {reviews.map(({ id, ...cardProps }) => (
                         <div key={id} className="flex-shrink-0">
                             <ReviewCard {...cardProps} />

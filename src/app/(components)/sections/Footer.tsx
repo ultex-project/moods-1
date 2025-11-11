@@ -8,7 +8,7 @@ export default function Footer() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-            <div className="container mx-auto p-12 pb-6 px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="w-full max-w-6xl mx-auto p-10 md:p-12 pb-6 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <div>
                     <Image src="/logo-wt.svg" alt="Moods logo" width={140} height={40} className="mb-4 h-10 w-auto"/>
@@ -55,7 +55,7 @@ export default function Footer() {
 
             </div>
 
-            <div className="container mx-auto px-6 py-4 xl:px-24 mt-8 pt-4 bg-[#252A25]  text-xs opacity-70">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 py-4 mt-8 pt-4 bg-[#252A25] text-xs opacity-70">
                 MODS © 2025 - Tous droits réservés.
             </div>
         </footer>

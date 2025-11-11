@@ -13,9 +13,9 @@ export default function AboutPage() {
 
             <main className="flex-grow">
                 {/* 🌿 Hero Section */}
-                <section className="relative px-4 md:px-8 lg:px-12 mt-10">
+                <section className="relative px-4 md:px-8 lg:px-20 mt-10">
                     <div
-                        className="relative max-w-6xl mx-auto rounded-[40px] overflow-hidden bg-[#2E4A35] text-white"
+                        className="relative max-w-6xl mx-auto rounded-2xl md:rounded-[40px] overflow-hidden bg-[#2E4A35] text-white"
                         style={{
                             backgroundImage: 'url("/about-bg.png")',
                             backgroundSize: 'cover',
@@ -24,10 +24,10 @@ export default function AboutPage() {
                     >
                         {/* Content Wrapper */}
                         <div
-                            className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-16 md:py-20">
+                            className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-16 py-16 md:py-20 gap-10">
 
                             {/* Left Text + SVG */}
-                            <div className="md:w-1/2 relative z-10">
+                            <div className="w-full lg:w-1/2 relative z-10 text-center lg:text-left">
                                 <div className="relative inline-block leading-[0.8]">
                                     <h2 className="text-[3rem] md:text-[5rem] font-bold font-amd text-white mb-0 relative z-10">
                                         <span className="block">Who</span>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                             </div>
 
                             {/* Right Image */}
-                            <div className="md:w-1/2 flex justify-center relative z-20">
+                            <div className="w-full lg:w-1/2 flex justify-center relative z-20">
                                 <Image
                                     src="/about-hero-products.svg"
                                     alt="MODS Products"
@@ -61,9 +61,9 @@ export default function AboutPage() {
                 </section>
 
                 {/* 🌿 White Container Section */}
-                <section className="relative -mt-20 px-4">
+                <section className="relative -mt-20 px-4 md:px-8 lg:px-20">
                     <div
-                        className="bg-white rounded-3xl shadow-lg/10 border border-gray-100 max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-14 text-center">
+                        className="bg-white rounded-2xl md:rounded-3xl shadow-lg/10 border border-gray-100 max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-14 text-center space-y-8">
                         {/* 🧡 Welcome Section */}
                         <h2 className="text-5xl font-amd text-[#D4A76A] mb-3">Mods</h2>
                         <h3 className="text-3xl font-semibold text-[#2E4A35] mb-6">
@@ -81,7 +81,7 @@ export default function AboutPage() {
                         </p>
 
                         {/* Category Highlights */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <CategoryCard
                                 title="Spices"
                                 image="/categories/category-spices.png"
@@ -151,7 +151,7 @@ export default function AboutPage() {
                     </div>
                 </section>
                 {/* 🌱 Our Purpose */}
-                <section className="px-6 md:px-12 lg:px-20 py-16 text-center max-w-6xl mx-auto">
+                <section className="px-4 md:px-8 lg:px-20 py-16 text-center max-w-6xl mx-auto space-y-8">
                     <h2 className="text-3xl font-semibold text-[#2E4A35] mb-4">
                         Our purpose
                     </h2>
@@ -160,7 +160,7 @@ export default function AboutPage() {
                         and other spices.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             {
                                 icon: '/stat-icon/safety.png',

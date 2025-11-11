@@ -276,7 +276,7 @@ export default function ProductsPage() {
             <main className="flex-grow">
                 <ProductHero />
 
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mt-8">
+                <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 mt-8 space-y-10">
                     <FilterBar
                         itemsPerPage={itemsPerPage}
                         sortBy={sortBy}

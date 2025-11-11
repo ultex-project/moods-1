@@ -84,10 +84,9 @@ export default function CategoriesSection() {
     const visibleCategories = categories.slice(currentIndex, currentIndex + itemsPerPage);
 
     return (
-        <section className="py-16 px-4 md:px-8 lg:px-16">
-            <div className="container mx-auto">
-                {/* Section Header */}
-                <div className="mb-12">
+        <section className="py-16">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
+                <div>
                     <h2 className="text-3xl font-amd font-bold text-moods-green flex items-center">
                         <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
                             <Image src="/category-icon/category-icon-1.png" alt="Categories icon" width={32} height={32} />
@@ -99,40 +98,35 @@ export default function CategoriesSection() {
                     </p>
                 </div>
 
-                {/* Category Carousel */}
-                <div className="relative">
-                    {/* Category Cards */}
-                    <div className="flex space-x-6  pb-6">
-                        {visibleCategories.map((category) => (
-                            <div key={category.id} className="flex-shrink-0 w-full md:w-1/3">
-                                <CategoryCard {...category} />
-                            </div>
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {visibleCategories.map((category) => (
+                        <div key={category.id} className="w-full">
+                            <CategoryCard {...category} />
+                        </div>
+                    ))}
+                </div>
 
-                    {/* Navigation Buttons */}
-                    <div className="mt-8 flex justify-center space-x-4">
-                        <button
-                            type="button"
-                            onClick={prev}
-                            disabled={currentIndex === 0}
-                            className={`bg-moods-green text-white p-3 rounded-md hover:bg-opacity-90 transition ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-                        <button
-                            type="button"
-                            onClick={next}
-                            disabled={currentIndex + itemsPerPage >= categories.length}
-                            className={`bg-moods-green text-white p-3 rounded-md hover:bg-opacity-90 transition ${currentIndex + itemsPerPage >= categories.length ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
+                <div className="flex justify-center gap-4">
+                    <button
+                        type="button"
+                        onClick={prev}
+                        disabled={currentIndex === 0}
+                        className={`bg-moods-green text-white p-3 rounded-lg md:rounded-xl shadow-sm hover:bg-opacity-90 transition ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button
+                        type="button"
+                        onClick={next}
+                        disabled={currentIndex + itemsPerPage >= categories.length}
+                        className={`bg-moods-green text-white p-3 rounded-lg md:rounded-xl shadow-sm hover:bg-opacity-90 transition ${currentIndex + itemsPerPage >= categories.length ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>

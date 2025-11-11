@@ -11,7 +11,7 @@ export default function ContactPage() {
 
             <main className="flex-grow">
                 {/* 🏞️ Contact Hero Section */}
-                <section className="relative px-4 md:px-8 lg:px-12 mt-10">
+                <section className="relative px-4 md:px-8 lg:px-20 mt-10">
                     <div
                         className="relative max-w-6xl mx-auto rounded-[40px] overflow-visible bg-[#2E4A35] text-white"
                         style={{
@@ -40,7 +40,7 @@ export default function ContactPage() {
                     </div>
                 </section>
                 {/* 📨 Contact Form */}
-                <section className="px-6 md:px-12 lg:px-24 py-20 max-w-5xl mx-auto">
+                <section className="px-4 md:px-8 lg:px-20 py-20 w-full max-w-6xl mx-auto">
                     <h2 className="text-xl font-semibold text-[#2E4A35] mb-10 text-center tracking-wide">
                         TELL US YOUR PROJECT
                     </h2>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 </section>
 
                 {/* 📰 Newsletter Section */}
-                <section className="border-t border-gray-200 py-16 px-6 text-center bg-white">
+                <section className="border-t border-gray-200 py-16 px-4 md:px-8 lg:px-20 text-center bg-white">
                     <h2 className="text-3xl font-semibold text-[#2E4A35] mb-3 font-amd">
                         Subscribe Newsletter.
                     </h2>

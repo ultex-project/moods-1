@@ -77,10 +77,9 @@ export default function ProductsSection() {
     const visibleProducts = showAll ? products : products.slice(0, 8);
 
     return (
-        <section className="py-16 px-4 md:px-8 lg:px-16">
-            <div className="container mx-auto">
-                {/* Section Header */}
-                <div className="mb-12">
+        <section className="py-16">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
+                <div>
                     <h2 className="text-3xl font-bold text-moods-green font-amd flex items-center">
                         <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
                             <Image src="/category-icon/category-icon.png" alt="Products icon" width={32} height={32} />
@@ -92,20 +91,18 @@ export default function ProductsSection() {
                     </p>
                 </div>
 
-                {/* Product Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {visibleProducts.map((product) => (
                         <ProductCard key={product.id} {...product} />
                     ))}
                 </div>
 
-                {/* Show More Button */}
                 {!showAll && (
-                    <div className="mt-8 text-center">
+                    <div className="text-center">
                         <button
                             type="button"
                             onClick={() => setShowAll(true)}
-                            className="bg-[#2E4A35] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-300 inline-block"
+                            className="bg-[#2E4A35] text-white px-6 py-3 rounded-lg md:rounded-xl font-medium hover:opacity-90 transition-all duration-300 inline-block"
                         >
                             Show more
                         </button>

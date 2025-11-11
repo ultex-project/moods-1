@@ -7,7 +7,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 export default function Header() {
     return (
         <header className="border-b border-gray-200">
-            <div className="container mx-auto px-6 xl:px-24 py-4 flex justify-between items-center">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 py-4 flex justify-between items-center">
                 <Link href="/" className="flex items-center space-x-2" aria-label="Go to homepage">
                     <Image
                         src="/logo.svg"

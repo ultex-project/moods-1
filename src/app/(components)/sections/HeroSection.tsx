@@ -73,11 +73,10 @@ export default function HeroCarousel() {
     const currentSlide = heroSlides[currentIndex];
 
     return (
-        <section className="relative h-[80vh] md:h-screen flex items-center overflow-hidden">
-            <div className="container mx-10 mx-auto px-5 xl:px-24">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-10"></div>
+        <section className="relative overflow-hidden py-16 sm:py-20">
+            <div className="absolute inset-0 opacity-10" />
 
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}
@@ -85,51 +84,47 @@ export default function HeroCarousel() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: -100 }}
                         transition={{ duration: 0.5 }}
-                        className="absolute inset-0 flex items-center"
                     >
-                        <div
-                            className="container mx-auto px-4 md:px-8 lg:px-16 flex flex-col md:flex-row items-center gap-12">
-                            {/* Text Content */}
-                            <div className="md:w-2/6 space-y-6">
+                        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                            <div className="w-full lg:w-2/5 space-y-6 text-center lg:text-left">
                                 <h1 className={`text-4xl md:text-5xl font-bold leading-tight ${currentSlide.color}`}>
                                     <span className="block text-5xl font-avelia">{currentSlide.title}</span>
-                                    <span
-                                        className="text-moods-green font-amd block mt-2">{currentSlide.subtitle}</span>
+                                    <span className="text-moods-green font-amd block mt-2">{currentSlide.subtitle}</span>
                                 </h1>
                                 <p className="text-gray-600 mt-4">
                                     {currentSlide.description}
                                 </p>
                                 <a
                                     href={currentSlide.buttonLink}
-                                    className="bg-[#2E4A35] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-300 inline-block mt-6"
+                                    className="bg-[#2E4A35] text-white px-6 py-3 rounded-xl md:rounded-2xl font-medium hover:opacity-90 transition-all duration-300 inline-block mt-6"
                                 >
                                     {currentSlide.buttonText}
                                 </a>
                             </div>
 
-                            {/* Product Image */}
-                            <div className="md:w-4/6 relative">
+                            <div className="w-full lg:w-3/5 relative">
                                 <div
                                     className="absolute inset-0 bg-pattern z-0"
                                     style={{
                                         transform: 'scale(0.7)',
                                     }}
-                                ></div>
+                                />
                                 <motion.div
                                     initial={prefersReducedMotion ? false : { scale: 0.9, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
                                     className="relative z-10"
                                 >
-                                    <Image
-                                        src={currentSlide.image}
-                                        alt={currentSlide.title}
-                                        width={960}
-                                        height={640}
-                                        priority={currentIndex === 0}
-                                        className="h-auto w-full object-contain"
-                                        sizes="(min-width: 1024px) 60vw, 90vw"
-                                    />
+                                    <div className="relative w-full aspect-square sm:aspect-[4/3]">
+                                        <Image
+                                            src={currentSlide.image}
+                                            alt={currentSlide.title}
+                                            fill
+                                            priority={currentIndex === 0}
+                                            className="object-contain"
+                                            sizes="(min-width: 1024px) 60vw, 90vw"
+                                        />
+                                    </div>
                                 </motion.div>
                             </div>
                         </div>

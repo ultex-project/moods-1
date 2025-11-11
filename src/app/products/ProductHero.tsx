@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 export default function ProductHero() {
     return (
         <section className="relative bg-white py-12 md:py-20 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center gap-8 relative z-10">
+            <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 flex flex-col lg:flex-row items-center gap-10 relative z-10">
                 {/* Left Text Content */}
-                <div className="md:w-1/2 space-y-6 relative">
+                <div className="w-full lg:w-1/2 space-y-6 relative text-center lg:text-left">
                     {/* Background "Natural" SVG */}
                     <Image
                         src="/natural-hero.svg"
@@ -41,16 +41,17 @@ export default function ProductHero() {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="md:w-1/2 flex justify-center relative"
+                    className="w-full lg:w-1/2 flex justify-center relative"
                 >
-                    <Image
-                        src="/products-hero.svg"
-                        alt="MODS products"
-                        width={750}
-                        height={500}
-                        className="object-contain drop-shadow-xl"
-                        priority
-                    />
+                    <div className="relative w-full max-w-md aspect-[4/3]">
+                        <Image
+                            src="/products-hero.svg"
+                            alt="MODS products"
+                            fill
+                            className="object-contain drop-shadow-xl"
+                            priority
+                        />
+                    </div>
                 </motion.div>
             </div>
         </section>
