@@ -23,6 +23,8 @@ export default function Header() {
                     <Link href="/" className="font-medium hover:text-moods-green">Home</Link>
                     <Link href="/categories" className="font-medium hover:text-moods-green">Categories</Link>
                     <Link href="/products" className="font-medium hover:text-moods-green">Products</Link>
+                    <Link href="/about" className="font-medium hover:text-moods-green">About Us</Link>
+                    <Link href="/contact" className="font-medium hover:text-moods-green">Contact Us</Link>
                 </nav>
 
                 <div className="flex items-center space-x-4">
