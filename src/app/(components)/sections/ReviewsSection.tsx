@@ -1,6 +1,7 @@
 'use client';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Image from 'next/image';
 import ReviewCard, { ReviewCardProps } from '@/app/(components)/cards/ReviewCard';
 
 type ReviewItem = { id: number } & ReviewCardProps;
@@ -64,11 +65,12 @@ export default function ReviewsSection() {
                 <div className="mb-12 flex items-center justify-between">
                     <div>
                         <h2 className="text-3xl font-bold font-amd text-moods-green flex items-center">
-              <span className="mr-2">
-                <img
+              <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+                <Image
                     src="/category-icon/category-icon-2.png"
-                    alt="Reviews Icon"
-                    className="h-8 w-8"
+                    alt="Reviews icon"
+                    width={32}
+                    height={32}
                 />
               </span>
                             Our Reviews
@@ -80,10 +82,10 @@ export default function ReviewsSection() {
                     </div>
 
                     <div className="flex space-x-2">
-                        <button className="bg-moods-green text-white p-2 rounded-md hover:bg-opacity-90 transition">
+                        <button type="button" className="bg-moods-green text-white p-2 rounded-md hover:bg-opacity-90 transition" aria-label="Previous reviews">
                             <FaChevronLeft />
                         </button>
-                        <button className="bg-moods-green text-white p-2 rounded-md hover:bg-opacity-90 transition">
+                        <button type="button" className="bg-moods-green text-white p-2 rounded-md hover:bg-opacity-90 transition" aria-label="Next reviews">
                             <FaChevronRight />
                         </button>
                     </div>

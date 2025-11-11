@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import CategoryCard from "@/app/(components)/cards/CategoryCard";
 
 
@@ -88,7 +89,10 @@ export default function CategoriesSection() {
                 {/* Section Header */}
                 <div className="mb-12">
                     <h2 className="text-3xl font-amd font-bold text-moods-green flex items-center">
-                        <span className="mr-2"><img src={"category-icon/category-icon-1.png"}/></span> Our Categories
+                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+                            <Image src="/category-icon/category-icon-1.png" alt="Categories icon" width={32} height={32} />
+                        </span>
+                        Our Categories
                     </h2>
                     <p className="text-gray-600 mt-4">
                         Traditional Moroccan food store products include staples like argan oil, saffron, and other spices
@@ -99,7 +103,7 @@ export default function CategoriesSection() {
                 <div className="relative">
                     {/* Category Cards */}
                     <div className="flex space-x-6  pb-6">
-                        {visibleCategories.map((category, index) => (
+                        {visibleCategories.map((category) => (
                             <div key={category.id} className="flex-shrink-0 w-full md:w-1/3">
                                 <CategoryCard {...category} />
                             </div>
@@ -109,6 +113,7 @@ export default function CategoriesSection() {
                     {/* Navigation Buttons */}
                     <div className="mt-8 flex justify-center space-x-4">
                         <button
+                            type="button"
                             onClick={prev}
                             disabled={currentIndex === 0}
                             className={`bg-moods-green text-white p-3 rounded-md hover:bg-opacity-90 transition ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -118,6 +123,7 @@ export default function CategoriesSection() {
                             </svg>
                         </button>
                         <button
+                            type="button"
                             onClick={next}
                             disabled={currentIndex + itemsPerPage >= categories.length}
                             className={`bg-moods-green text-white p-3 rounded-md hover:bg-opacity-90 transition ${currentIndex + itemsPerPage >= categories.length ? 'opacity-50 cursor-not-allowed' : ''}`}

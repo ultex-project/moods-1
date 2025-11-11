@@ -1,15 +1,17 @@
+import Image from 'next/image';
+
 export default function Footer() {
     return (
-        <footer className="bg-moods-green text-white mt-[100px] "
+        <footer className="bg-moods-green text-white mt-[100px]"
                 style={{
                     backgroundImage: 'url("/footer-bg.svg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
-            <div className="container mx-auto p-12  pb-6 px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="container mx-auto p-12 pb-6 px-6 xl:px-24 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 <div>
-                    <img src="/logo-wt.svg" alt="Moods Logo" className="h-10 mb-4"/>
+                    <Image src="/logo-wt.svg" alt="Moods logo" width={140} height={40} className="mb-4 h-10 w-auto"/>
                     <p className="text-sm opacity-80">
                         Traditional foods carry cultural identity, history, and customs, acting as a link to heritage
                         passed down through generations.

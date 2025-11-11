@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import ProductCard from '../cards/ProductCard';
 
 // Sample product data
@@ -81,7 +82,10 @@ export default function ProductsSection() {
                 {/* Section Header */}
                 <div className="mb-12">
                     <h2 className="text-3xl font-bold text-moods-green font-amd flex items-center">
-                        <span className="mr-2"><img src={"/category-icon/category-icon.png"}/></span> Our Products
+                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+                            <Image src="/category-icon/category-icon.png" alt="Products icon" width={32} height={32} />
+                        </span>
+                        Our Products
                     </h2>
                     <p className="text-gray-600 mt-4">
                         Traditional Moroccan food store products include staples like argan oil, saffron, and other spices
@@ -99,6 +103,7 @@ export default function ProductsSection() {
                 {!showAll && (
                     <div className="mt-8 text-center">
                         <button
+                            type="button"
                             onClick={() => setShowAll(true)}
                             className="bg-[#2E4A35] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-300 inline-block"
                         >

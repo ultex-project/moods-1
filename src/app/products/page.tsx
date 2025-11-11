@@ -1,16 +1,34 @@
+'use client';
+
 import Header from '../(components)/sections/Header';
 import Footer from '../(components)/sections/Footer';
+import FilterBar from "@/app/categories/FilterBar";
+import Pagination from "@/app/categories/Pagination";
+import ProductHero from "@/app/products/ProductHero";
+import ProductGrid from "@/app/products/ProductGrid";
+
 
 export default function ProductsPage() {
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-white">
             <Header />
-            <main className="flex-grow flex items-center justify-center py-16 px-4">
-                <div className="text-center">
-                    <h1 className="text-3xl font-bold text-moods-green mb-4">Products Page</h1>
-                    <p className="text-xl text-gray-600">Coming soon...</p>
+
+            <main className="flex-grow">
+                {/* Hero Banner */}
+                <ProductHero />
+
+                {/* Filter bar */}
+                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mt-8">
+                    <FilterBar />
+
+                    {/* Product grid */}
+                    <ProductGrid />
+
+                    {/* Pagination */}
+                    <Pagination currentPage={1} totalPages={4} />
                 </div>
             </main>
+
             <Footer />
         </div>
     );

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Define your hero slides data
@@ -41,17 +42,18 @@ const heroSlides = [
 export default function HeroCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const prefersReducedMotion = useReducedMotion();
+    const slideDuration = 5000;
 
-    // Auto-play logic
     useEffect(() => {
-        if (!isAutoPlaying) return;
+        if (!isAutoPlaying || prefersReducedMotion) return;
 
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-        }, 5000000); // Change slide every 5 seconds
+        }, slideDuration);
 
         return () => clearInterval(timer);
-    }, [isAutoPlaying]);
+    }, [isAutoPlaying, prefersReducedMotion, slideDuration]);
 
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
@@ -76,14 +78,13 @@ export default function HeroCarousel() {
                 {/* Background pattern */}
                 <div className="absolute inset-0 opacity-10"></div>
 
-                {/* Slides */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}
-                        initial={{opacity: 0, x: 100}}
-                        animate={{opacity: 1, x: 0}}
-                        exit={{opacity: 0, x: -100}}
-                        transition={{duration: 0.5}}
+                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: -100 }}
+                        transition={{ duration: 0.5 }}
                         className="absolute inset-0 flex items-center"
                     >
                         <div
@@ -114,14 +115,22 @@ export default function HeroCarousel() {
                                         transform: 'scale(0.7)',
                                     }}
                                 ></div>
-                                <motion.img
-                                    src={currentSlide.image}
-                                    alt={currentSlide.title}
-                                    className="w-full h-auto relative z-10"
-                                    initial={{scale: 0.9, opacity: 0}}
-                                    animate={{scale: 1, opacity: 1}}
-                                    transition={{duration: 0.8, delay: 0.2}}
-                                />
+                                <motion.div
+                                    initial={prefersReducedMotion ? false : { scale: 0.9, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    className="relative z-10"
+                                >
+                                    <Image
+                                        src={currentSlide.image}
+                                        alt={currentSlide.title}
+                                        width={960}
+                                        height={640}
+                                        priority={currentIndex === 0}
+                                        className="h-auto w-full object-contain"
+                                        sizes="(min-width: 1024px) 60vw, 90vw"
+                                    />
+                                </motion.div>
                             </div>
                         </div>
                     </motion.div>
@@ -129,6 +138,7 @@ export default function HeroCarousel() {
 
                 {/* Navigation Buttons */}
                 <button
+                    type="button"
                     onClick={prevSlide}
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-moods-green text-white p-3 rounded-full hover:bg-opacity-90 z-10"
                     aria-label="Previous slide"
@@ -137,6 +147,7 @@ export default function HeroCarousel() {
                 </button>
 
                 <button
+                    type="button"
                     onClick={nextSlide}
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-moods-green text-white p-3 rounded-full hover:bg-opacity-90 z-10"
                     aria-label="Next slide"
@@ -148,6 +159,7 @@ export default function HeroCarousel() {
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
                     {heroSlides.map((_, index) => (
                         <button
+                            type="button"
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`w-3 h-3 rounded-full transition-colors ${

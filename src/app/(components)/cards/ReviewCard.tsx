@@ -10,7 +10,6 @@ export interface ReviewCardProps {
     rating: number;
     isHighlighted?: boolean;
     type: ReviewVariant;
-    slug?: string;
 }
 
 export default function ReviewCard({
@@ -19,7 +18,6 @@ export default function ReviewCard({
                                        rating,
                                        isHighlighted = false,
                                        type,
-                                       slug,
                                    }: ReviewCardProps) {
     const starColor = isHighlighted ? 'text-white' : 'text-[#383838]';
     const textColor = isHighlighted ? 'text-white' : 'text-gray-800';
