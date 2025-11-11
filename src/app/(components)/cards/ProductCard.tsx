@@ -1,15 +1,20 @@
+// app/(components)/products/ProductCard.tsx
 'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+type CardMode = 'default' | 'galleryMain';
+
 interface ProductCardProps {
     title: string;
     description: string;
     image: string;
     slug: string;
-    isWide?: boolean; // ← New prop to mark wide products
+    isWide?: boolean;
+    hideText?: boolean;
+    mode?: CardMode; // ← NEW
 }
 
 export default function ProductCard({
@@ -17,60 +22,74 @@ export default function ProductCard({
                                         description,
                                         image,
                                         slug,
-                                        isWide = false
+                                        isWide = false,
+                                        hideText = false,
+                                        mode = 'default',
                                     }: ProductCardProps) {
+    // galleryMain = taller, more padding, subtle pattern, centered stand
+    const isGallery = mode === 'galleryMain';
+
     return (
-        <Link
-            href={`/products/${slug}`}
-            className="group block overflow-hidden  "
-        >
-            <div className="relative h-64 bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{
-                borderRadius: '30px',
-            }}>
-                {/* Pattern Background */}
+        <Link href={`/products/${slug}`} className="group block overflow-hidden">
+            <div
+                className={[
+                    'relative rounded-xl shadow-sm hover:shadow-md transition-shadow bg-gray-100',
+                    isGallery ? 'h-[460px] md:h-[520px]' : 'h-64',
+                ].join(' ')}
+                style={{ borderRadius: '20px' }}
+            >
+                {/* Pattern */}
                 <div
-                    className="absolute inset-0 z-0"
+                    className="absolute inset-0 z-0 opacity-[0.12]"
                     style={{
                         backgroundImage: 'url("/pattern-bg-cropped.svg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         transform: 'rotate(180deg)',
-                        borderRadius: '30px'
+                        borderRadius: '20px',
                     }}
-                ></div>
+                />
 
-                {/* Gray Stand (Behind Product) */}
+                {/* Stand (smaller, centered for gallery) */}
                 <div
-                    className="absolute bottom-0 left-0 right-0 h-1/6 bg-[#D2D0D0] z-0 rounded-t-3xl"
-                    style={{
-                        borderRadius: '30px',
-                    }}
-                ></div>
+                    className={[
+                        'absolute bottom-4 left-1/2 -translate-x-1/2 z-0 bg-gray-300/70',
+                        isGallery
+                            ? 'h-14 w-[78%] rounded-[18px]'
+                            : 'h-[16%] w-full left-0 translate-x-0 rounded-t-3xl bottom-0',
+                    ].join(' ')}
+                />
 
-                {/* Product Image Container */}
+                {/* Product Image */}
                 <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
+                    initial={{ scale: 0.94, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="absolute inset-0 flex items-end justify-center z-10 p-2 md:p-4"
+                    transition={{ duration: 0.45 }}
+                    className={[
+                        'absolute inset-0 z-10 flex items-end justify-center',
+                        isGallery ? 'p-8 md:p-10' : 'p-2 md:p-4',
+                    ].join(' ')}
                 >
                     <Image
                         src={image}
                         alt={title}
-                        width={200}
-                        height={200}
-                        className={`max-w-full max-h-[70%] object-contain ${
-                            isWide ? 'max-h-[70%]' : 'max-h-[90%]'
-                        }`}
+                        width={isGallery ? 420 : 200}
+                        height={isGallery ? 420 : 200}
+                        className={[
+                            'object-contain',
+                            isGallery ? 'max-h-[80%]' : isWide ? 'max-h-[70%]' : 'max-h-[90%]',
+                        ].join(' ')}
+                        priority={isGallery}
                     />
                 </motion.div>
             </div>
 
-            {/* Product Info */}
-            <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-moods-green mb-2">{title}</h3>
-                <p className="text-sm text-gray-600">{description}</p>
-            </div>
+            {!hideText && (
+                <div className="p-4 text-center">
+                    <h3 className="text-lg font-bold text-moods-green mb-2">{title}</h3>
+                    <p className="text-sm text-gray-600">{description}</p>
+                </div>
+            )}
         </Link>
     );
 }
