@@ -10,17 +10,17 @@ export default function Footer() {
                 }}>
             <div className="w-full max-w-6xl mx-auto p-10 md:p-12 pb-6 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <div>
+                <div className="text-center md:text-left space-y-3">
                     <Image src="/logo-wt.svg" alt="Moods logo" width={140} height={40} className="mb-4 h-10 w-auto"/>
-                    <p className="text-sm opacity-80">
+                    <p className="text-sm md:text-base opacity-80 leading-relaxed">
                         Traditional foods carry cultural identity, history, and customs, acting as a link to heritage
                         passed down through generations.
                     </p>
                 </div>
 
-                <div>
-                    <h3 className="font-bold mb-4">Accès Rapide</h3>
-                    <ul className="space-y-2 text-sm opacity-80">
+                <div className="text-center md:text-left">
+                    <h3 className="font-bold mb-4 text-lg md:text-xl">Accès Rapide</h3>
+                    <ul className="space-y-2 text-sm md:text-base opacity-80">
                         <li><a href="#">Accueil</a></li>
                         <li><a href="#">À Propos</a></li>
                         <li><a href="#">Solutions</a></li>
@@ -30,16 +30,16 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <div>
-                    <h3 className="font-bold mb-4">Médias Sociaux</h3>
-                    <p className="text-sm opacity-80">
+                <div className="text-center md:text-left space-y-3">
+                    <h3 className="font-bold mb-4 text-lg md:text-xl">Médias Sociaux</h3>
+                    <p className="text-sm md:text-base opacity-80 leading-relaxed">
                         Restez connecté à la communauté ULTEx et suivez nos dernières actualités sur les médias sociaux.
                     </p>
                 </div>
 
-                <div>
-                    <h3 className="font-bold mb-4">Service Client</h3>
-                    <div className="space-y-2 text-sm opacity-80">
+                <div className="text-center md:text-left">
+                    <h3 className="font-bold mb-4 text-lg md:text-xl">Service Client</h3>
+                    <div className="space-y-2 text-sm md:text-base opacity-80 leading-relaxed">
                         <div>
                             <strong>Casablanca</strong><br/>
                             (+212) 522-862135<br/>

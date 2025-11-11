@@ -87,16 +87,16 @@ export default function HeroCarousel() {
                     >
                         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                             <div className="w-full lg:w-2/5 space-y-6 text-center lg:text-left">
-                                <h1 className={`text-4xl md:text-5xl font-bold leading-tight ${currentSlide.color}`}>
-                                    <span className="block text-5xl font-avelia">{currentSlide.title}</span>
-                                    <span className="text-moods-green font-amd block mt-2">{currentSlide.subtitle}</span>
+                                <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight ${currentSlide.color}`}>
+                                    <span className="block text-5xl md:text-6xl lg:text-7xl font-avelia leading-none">{currentSlide.title}</span>
+                                    <span className="text-moods-green font-amd block mt-2 text-3xl md:text-4xl lg:text-5xl leading-tight">{currentSlide.subtitle}</span>
                                 </h1>
-                                <p className="text-gray-600 mt-4">
+                                <p className="text-gray-600 mt-4 text-base md:text-lg leading-relaxed">
                                     {currentSlide.description}
                                 </p>
                                 <a
                                     href={currentSlide.buttonLink}
-                                    className="bg-[#2E4A35] text-white px-6 py-3 rounded-xl md:rounded-2xl font-medium hover:opacity-90 transition-all duration-300 inline-block mt-6"
+                                    className="bg-[#2E4A35] text-white px-6 py-3 rounded-xl md:rounded-2xl font-medium text-sm md:text-base tracking-wide hover:opacity-90 transition-all duration-300 inline-block mt-6"
                                 >
                                     {currentSlide.buttonText}
                                 </a>

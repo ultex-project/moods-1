@@ -86,14 +86,14 @@ export default function CategoriesSection() {
     return (
         <section className="py-16">
             <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
-                <div>
-                    <h2 className="text-3xl font-amd font-bold text-moods-green flex items-center">
-                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+                <div className="text-center md:text-left space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-amd font-bold text-moods-green flex items-center justify-center md:justify-start">
+                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm shrink-0">
                             <Image src="/category-icon/category-icon-1.png" alt="Categories icon" width={32} height={32} />
                         </span>
                         Our Categories
                     </h2>
-                    <p className="text-gray-600 mt-4">
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                         Traditional Moroccan food store products include staples like argan oil, saffron, and other spices
                     </p>
                 </div>

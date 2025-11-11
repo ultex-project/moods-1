@@ -274,7 +274,7 @@ export default function CategoriesPage() {
                     />
 
                     {paginatedProducts.length === 0 ? (
-                        <div className="border border-dashed border-gray-300 rounded-xl py-16 text-center text-gray-500">
+                        <div className="border border-dashed border-gray-300 rounded-xl py-16 text-center text-gray-500 text-base md:text-lg">
                             No products match this combination. Try a different filter.
                         </div>
                     ) : (

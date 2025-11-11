@@ -55,7 +55,7 @@ export default function CategoryCard({
 
                 {/* Category Title */}
                 <div className="absolute top-4 left-4 right-4 text-center">
-                    <h3 className="text-4xl font-amd font-bold text-moods-green">{title}</h3>
+                    <h3 className="text-3xl md:text-4xl font-amd font-bold text-moods-green leading-tight">{title}</h3>
                 </div>
             </div>
         </Link>

@@ -28,7 +28,7 @@ export default function Pagination({
     return (
         <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Left: Text info */}
-            <p className="text-sm text-gray-500">
+            <p className="text-sm md:text-base text-gray-500">
                 {totalItems > 0
                     ? `Showing ${startItem} to ${endItem} of ${totalItems} (${totalPages} pages)`
                     : 'No products match this filter'}
@@ -55,7 +55,7 @@ export default function Pagination({
                             key={pageNumber}
                             onClick={() => handleChange(pageNumber)}
                             className={[
-                                'w-9 h-9 flex items-center justify-center border rounded-md font-medium text-sm transition-all',
+                                'w-9 h-9 flex items-center justify-center border rounded-md font-medium text-sm md:text-base transition-all',
                                 isActive
                                     ? 'bg-[#2E4A35] text-white border-[#2E4A35]'
                                     : 'text-gray-700 border-gray-300 hover:bg-gray-100',

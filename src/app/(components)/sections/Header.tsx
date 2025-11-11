@@ -19,7 +19,7 @@ export default function Header() {
                     />
                 </Link>
 
-                <nav className="hidden md:flex space-x-8">
+                <nav className="hidden md:flex space-x-8 text-sm md:text-base">
                     <Link href="/" className="font-medium hover:text-moods-green">Home</Link>
                     <Link href="/categories" className="font-medium hover:text-moods-green">Categories</Link>
                     <Link href="/products" className="font-medium hover:text-moods-green">Products</Link>

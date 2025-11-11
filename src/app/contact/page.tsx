@@ -22,7 +22,7 @@ export default function ContactPage() {
                     >
                         {/* Inner content */}
                         <div className="relative flex flex-col items-center justify-end text-center h-[360px] md:h-[400px] lg:h-[420px] z-10">
-                            <h1 className="absolute top-10 md:top-12 text-4xl md:text-5xl font-bold font-amd tracking-wide">
+                            <h1 className="absolute top-10 md:top-12 text-4xl md:text-5xl lg:text-6xl font-bold font-amd tracking-wide leading-tight">
                                 CONTACT US
                             </h1>
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 </section>
                 {/* 📨 Contact Form */}
                 <section className="px-4 md:px-8 lg:px-20 py-20 w-full max-w-6xl mx-auto">
-                    <h2 className="text-xl font-semibold text-[#2E4A35] mb-10 text-center tracking-wide">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-[#2E4A35] mb-10 text-center tracking-wide leading-tight">
                         TELL US YOUR PROJECT
                     </h2>
 
@@ -49,33 +49,33 @@ export default function ContactPage() {
                         <input
                             type="text"
                             placeholder="First Name *"
-                            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:border-[#2E4A35] transition"
+                            className="border border-gray-300 rounded-md p-3 text-sm md:text-base focus:outline-none focus:border-[#2E4A35] transition"
                         />
                         <input
                             type="text"
                             placeholder="Last Name *"
-                            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:border-[#2E4A35] transition"
+                            className="border border-gray-300 rounded-md p-3 text-sm md:text-base focus:outline-none focus:border-[#2E4A35] transition"
                         />
                         <input
                             type="text"
                             placeholder="Subject *"
-                            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:border-[#2E4A35] transition md:col-span-2"
+                            className="border border-gray-300 rounded-md p-3 text-sm md:text-base focus:outline-none focus:border-[#2E4A35] transition md:col-span-2"
                         />
                         <input
                             type="email"
                             placeholder="Email *"
-                            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:border-[#2E4A35] transition md:col-span-2"
+                            className="border border-gray-300 rounded-md p-3 text-sm md:text-base focus:outline-none focus:border-[#2E4A35] transition md:col-span-2"
                         />
                         <textarea
                             placeholder="Your Message..."
                             rows={5}
-                            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:border-[#2E4A35] transition md:col-span-2 resize-none"
+                            className="border border-gray-300 rounded-md p-3 text-sm md:text-base focus:outline-none focus:border-[#2E4A35] transition md:col-span-2 resize-none"
                         ></textarea>
 
                         <div className="md:col-span-2 text-center">
                             <button
                                 type="submit"
-                                className="bg-[#2E4A35] text-white px-8 py-3 rounded-md hover:opacity-90 transition"
+                                className="bg-[#2E4A35] text-white px-8 py-3 rounded-md text-sm md:text-base tracking-wide hover:opacity-90 transition"
                             >
                                 Submit
                             </button>
@@ -85,10 +85,10 @@ export default function ContactPage() {
 
                 {/* 📰 Newsletter Section */}
                 <section className="border-t border-gray-200 py-16 px-4 md:px-8 lg:px-20 text-center bg-white">
-                    <h2 className="text-3xl font-semibold text-[#2E4A35] mb-3 font-amd">
+                    <h2 className="text-3xl md:text-4xl font-semibold text-[#2E4A35] mb-3 font-amd leading-tight">
                         Subscribe Newsletter.
                     </h2>
-                    <p className="text-gray-600 mb-8 text-sm md:text-base">
+                    <p className="text-gray-600 mb-8 text-sm md:text-base leading-relaxed">
                         Get e-mail updates about our latest shop and special offers.
                     </p>
 

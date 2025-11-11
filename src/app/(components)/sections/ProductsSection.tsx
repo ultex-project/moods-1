@@ -79,14 +79,14 @@ export default function ProductsSection() {
     return (
         <section className="py-16">
             <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-20 space-y-10">
-                <div>
-                    <h2 className="text-3xl font-bold text-moods-green font-amd flex items-center">
-                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+                <div className="text-center md:text-left space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-moods-green font-amd flex items-center justify-center md:justify-start">
+                        <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm shrink-0">
                             <Image src="/category-icon/category-icon.png" alt="Products icon" width={32} height={32} />
                         </span>
                         Our Products
                     </h2>
-                    <p className="text-gray-600 mt-4">
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                         Traditional Moroccan food store products include staples like argan oil, saffron, and other spices
                     </p>
                 </div>
@@ -102,7 +102,7 @@ export default function ProductsSection() {
                         <button
                             type="button"
                             onClick={() => setShowAll(true)}
-                            className="bg-[#2E4A35] text-white px-6 py-3 rounded-lg md:rounded-xl font-medium hover:opacity-90 transition-all duration-300 inline-block"
+                            className="bg-[#2E4A35] text-white px-6 py-3 rounded-lg md:rounded-xl font-medium text-sm md:text-base tracking-wide hover:opacity-90 transition-all duration-300 inline-block"
                         >
                             Show more
                         </button>

@@ -21,15 +21,15 @@ export default function AboutSection() {
 
                         {/* Text Content */}
                         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white font-amd">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-amd leading-tight">
                                 About MODS
                             </h2>
-                            <p className="text-gray-200 mt-4 text-lg leading-relaxed font-funnel-display-regular">
+                            <p className="text-gray-100 mt-4 text-base md:text-lg leading-relaxed font-funnel-display-regular">
                                 Traditional foods carry cultural identity, history, and customs, acting as a link to heritage passed down through generations.
                             </p>
                             <Link
                                 href="/about"
-                                className="inline-block mt-6 px-6 py-3 rounded-lg md:rounded-xl font-medium transition-all duration-300"
+                                className="inline-block mt-6 px-6 py-3 rounded-lg md:rounded-xl font-medium text-sm md:text-base tracking-wide transition-all duration-300"
                                 style={{
                                     backgroundColor: '#D4A76A', // Gold color
                                     color: 'white',

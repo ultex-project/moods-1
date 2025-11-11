@@ -28,10 +28,10 @@ export default function ProductHero() {
                     />
 
                     {/* Main Title */}
-                    <h2 className="text-[#D4A76A] text-5xl md:text-6xl font-bold  font-avelia relative z-10">
+                    <h2 className="text-[#D4A76A] text-4xl md:text-5xl lg:text-6xl font-bold font-avelia relative z-10 leading-tight">
                         Mods
                     </h2>
-                    <h3 className="text-[#2E4A35] text-4xl md:text-5xl font-bold font-amd relative z-10">
+                    <h3 className="text-[#2E4A35] text-3xl md:text-4xl lg:text-5xl font-bold font-amd relative z-10 leading-tight">
                         Shop Full Width
                     </h3>
                 </div>

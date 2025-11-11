@@ -27,13 +27,13 @@ export default function FilterBar({
         <div className="border border-gray-200 rounded-lg shadow-sm px-6 py-6 mb-10 bg-white space-y-5">
             {/* Title + basic filter controls */}
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <h1 className="text-xl md:text-2xl font-semibold text-[#2E4A35] font-amd">
+                <h1 className="text-2xl md:text-3xl font-semibold text-[#2E4A35] font-amd leading-tight text-center md:text-left">
                     {title}
                 </h1>
 
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
                     {/* Show Select */}
-                    <label className="flex items-center gap-2 text-gray-700 font-medium">
+                    <label className="flex items-center gap-2 text-gray-700 font-medium text-sm md:text-base">
                         <span>Show:</span>
                         <select
                             value={itemsPerPage}
@@ -50,7 +50,7 @@ export default function FilterBar({
                     </label>
 
                     {/* Sort By Select */}
-                    <label className="flex items-center gap-2 text-gray-700 font-medium">
+                    <label className="flex items-center gap-2 text-gray-700 font-medium text-sm md:text-base">
                         <span>Sort By:</span>
                         <select
                             value={sortBy}
@@ -77,7 +77,7 @@ export default function FilterBar({
                             key={category}
                             onClick={() => onCategoryChange(category)}
                             className={[
-                                'px-4 py-2 rounded-full border text-sm font-medium transition-colors duration-200',
+                                'px-4 py-2 rounded-full border text-sm md:text-base font-medium transition-colors duration-200',
                                 isActive
                                     ? 'bg-[#2E4A35] text-white border-[#2E4A35]'
                                     : 'border-gray-300 text-gray-700 hover:bg-gray-100',
