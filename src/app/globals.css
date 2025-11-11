@@ -70,7 +70,7 @@
 }
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2E4A35;
 }
 
 @theme inline {
@@ -80,20 +80,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: #ffffff;
   background: var(--background);
-  color: #171717;
+  color: #2E4A35;
   color: var(--foreground);
   font-family: 'Funnel Display', Arial, Helvetica, sans-serif;
   font-weight: 400;
+}
+
+html,
+body {
+  background-color: #ffffff !important;
+  color: #2E4A35 !important;
 }
 /* Define CSS classes for each font */
 .font-avelia {
