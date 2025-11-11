@@ -7,10 +7,9 @@ import ProductReviews from "@/app/products/ProductReviews";
 import ProductCard from "@/app/(components)/cards/ProductCard";
 import { getProductBySlug, getRelatedProducts } from "@/app/data/products";
 import { notFound } from "next/navigation";
+import type { PageProps } from "next";
 
-interface ProductDetailPageProps {
-    params: Promise<{ slug: string }>;
-}
+type ProductDetailPageProps = PageProps<{ slug: string }>;
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
     const { slug } = await params;
